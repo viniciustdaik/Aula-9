@@ -1,10 +1,12 @@
 //variável
 var box;
+var edges;
 
 function setup() {
   createCanvas(400, 400);
   box = createSprite(200, 200, 30, 30);
   box.shapeColor = 'purple';
+  edges = createEdgeSprites();
 }
 
 function draw() {
@@ -22,6 +24,10 @@ function draw() {
   if(keyIsDown(DOWN_ARROW)){
     box.position.y = box.position.y +5;
   }
+  box.collide(edges[0]);
+  box.collide(edges[1]);
+  box.collide(edges[2]);
+  box.collide(edges[3]);
   drawSprites();
 }
 
